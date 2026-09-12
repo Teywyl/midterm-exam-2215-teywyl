@@ -18,7 +18,11 @@ async function loadTable() {
     const tr = document.createElement('tr')
     // BUG E: one of these reads a field that does not exist on the row, so that
     //        column shows "undefined". Fix the field name.
-    tr.innerHTML = `<td>${s.id}</td><td>${s.ghosttype}</td><td>${s.witnesses}</td><td>${s.location_id}</td><td>${(s.reported_at || '').slice(0,10)}</td>`
+    tr.innerHTML = `<td>${s.id}</td>
+                    <td>${s.ghost_type}</td>
+                    <td>${s.witnesses}</td>
+                    <td>${s.location_id}</td>
+                    <td>${(s.reported_at || '').slice(0,10)}</td>`
     tbody.appendChild(tr)
   }
 }
